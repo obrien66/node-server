@@ -34,11 +34,14 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, {'content-type': 'text/plain'})
             break
     }
+
 	cc.cyan(`Requested ${req.url}, type ${ext}`)
 
 	var file = req.url.split("/").reverse()
 	file = file[0]
 	if (req.url == "/") file = "index.html"
+
+	file = `public/${file}`
 
 	if (file != "") {
 		fs.readFile(file, 'utf8', (err, data) => {
