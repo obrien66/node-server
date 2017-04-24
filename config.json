@@ -1,6 +1,0 @@
-{
-	"forbid": [
-		"config.json",
-		"index.js"
-	]
-}
