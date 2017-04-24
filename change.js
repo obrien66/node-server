@@ -1,1 +1,1 @@
-document.getElementById('change').innerHTML = "Changed"
+document.getElementById('change').innerHTML = "Changed text with JS"
