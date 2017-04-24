@@ -35,18 +35,10 @@ const server = http.createServer((req, res) => {
     }
 	cc.cyan(`Requested ${req.url}, type ${ext}`);
 
-	if (req.url == "/") {
-		fs.readFile("index.html", "utf8", (err, data) => {
-			if (err) {res.end(`404: index.html not found`)}
-			else{
-				cc.green("200: " + "index.html")
-				res.end(data)
-			}
-		});
-	}
-
 	var file = req.url.split("/").reverse()
 	file = file[0]
+	if (req.url == "/") file = "index.html"
+
 	if (file != "") {
 		fs.readFile(file, 'utf8', (err, data) => {
 			if (err) {
