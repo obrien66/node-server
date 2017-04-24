@@ -4,6 +4,7 @@
   "description": "A simple webserver",
   "main": "index.js",
   "dependencies": {
+    "brainfuck-javascript": "^0.1.7",
     "colour-cursive": "^2.0.1",
     "markdown-it": "^8.3.1"
   },
@@ -12,5 +13,6 @@
     "start": "node index.js"
   },
   "author": "Nicholas O'Brien <nicholas.obrien@ucc.on.ca> (http://obrien.tech)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/obrien66/node-server.git"
 }
