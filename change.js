@@ -1,0 +1,1 @@
+document.getElementById('change').innerHTML = "Changed text with JS"

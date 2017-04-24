@@ -1,6 +1,7 @@
 const http = require("http")
 const fs   = require("fs")
 const cc   = require("colour-cursive")
+const bf   = require('brainfuck-javascript')
 const MarkdownIt = require('markdown-it'),
 	md = new MarkdownIt()
 
@@ -33,7 +34,7 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, {'content-type': 'text/plain'})
             break
     }
-	cc.cyan(`Requested ${req.url}, type ${ext}`);
+	cc.cyan(`Requested ${req.url}, type ${ext}`)
 
 	var file = req.url.split("/").reverse()
 	file = file[0]
@@ -48,15 +49,19 @@ const server = http.createServer((req, res) => {
 			}
 			else {
 				cc.green("200: " + file)
-				if (ext != 'md') {
-					res.end(data)
+				if (ext == 'md') {
+					res.end(md.render(data))
+				}
+				else if (ext == "bf") {
+					res.end(bf.text(data))
+					// console.log(bf.text(data));
 				}
 				else {
-					res.end(md.render(data))
+					res.end(data)
 				}
 			}
 		})
 	}
-});
+})
 
 server.listen(8000)
