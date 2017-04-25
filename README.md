@@ -9,7 +9,7 @@ List of everything that works
 - Vanilla JavaScript
 - JSON
 - Markdown (Straight HTML conversion at the moment. Will add CSS later)
-- Brainfuck
+- Brainf-ck
 
 ```
 git clone https://github.com/obrien66/node-server.git
