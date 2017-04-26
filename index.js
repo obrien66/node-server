@@ -57,7 +57,6 @@ const server = http.createServer((req, res) => {
 				}
 				else if (ext == "bf") {
 					res.end(bf.text(data))
-					// console.log(bf.text(data));
 				}
 				else {
 					res.end(data)
